@@ -37,7 +37,7 @@
     },
     "autoload": {
         "psr-4": {
-          "verbb\\payflow\\": "src/"
+            "verbb\\payflow\\": "src/"
         }
     },
     "extra": {
