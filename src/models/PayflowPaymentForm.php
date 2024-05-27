@@ -6,14 +6,25 @@ use craft\commerce\models\PaymentSource;
 
 class PayflowPaymentForm extends CreditCardPaymentForm
 {
+    // Properties
+    // =========================================================================
+
     public mixed $cardReference = null;
+
+
+    // Public Methods
+    // =========================================================================
 
     public function populateFromPaymentSource(PaymentSource $paymentSource) : void
     {
         $this->cardReference = $paymentSource->token;
     }
 
-    public function rules(): array
+
+    // Protected Methods
+    // =========================================================================
+
+    protected function defineRules(): array
     {
         if (empty($this->cardReference)) {
             return parent::rules();

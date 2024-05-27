@@ -33,7 +33,7 @@ class Payflow extends CreditCardGateway
 
     public static function displayName(): string
     {
-        return Craft::t('commerce', 'PayPal Payflow');
+        return Craft::t('commerce-payflow', 'PayPal Payflow');
     }
 
     public function getPaymentFormModel(): BasePaymentForm
@@ -43,7 +43,7 @@ class Payflow extends CreditCardGateway
 
     public function getSettingsHtml(): ?string
     {
-        return Craft::$app->getView()->renderTemplate('commerce-payflow/gatewaySettings', ['gateway' => $this]);
+        return Craft::$app->getView()->renderTemplate('commerce-payflow/gateway', ['gateway' => $this]);
     }
 
     public function populateRequest(array &$request, BasePaymentForm $paymentForm = null): void
